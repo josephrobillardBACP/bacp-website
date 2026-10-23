@@ -1,9 +1,12 @@
+import SiteSeo from '@/components/SiteSeo';
+import { corePageSeo } from '@/lib/siteSeo';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 function TermsOfServicePage() {
   return (
     <>
+      <SiteSeo page={corePageSeo('/terms-of-service')!} />
       <Header />
       <main className="bg-white py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

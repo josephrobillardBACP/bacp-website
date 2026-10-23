@@ -6,6 +6,8 @@
  * company rather than a paraphrase of it.
  */
 
+import newsData from './news.json';
+
 export const site = {
   name: 'Blue Angel Clinical Partners',
   shortName: 'Blue Angel',
@@ -239,19 +241,4 @@ export const investorLogos = [
 /* Blog / news                                                         */
 /* ------------------------------------------------------------------ */
 
-export const newsItems = [
-  {
-    title:
-      'Blue Angel Closes its First Partnership with leading Concierge Physicians Dr. Amy Daniher and Dr. Ulrike Sujansky',
-    category: 'News and Press',
-    date: 'February 2, 2026',
-    href: 'https://blueangelclinical.com/blog',
-  },
-  {
-    title:
-      'Blue Angel Clinical Partners Completes Its $15M Fundraise to Accelerate the Growth of Concierge Medicine',
-    category: 'News and Press',
-    date: 'December 4, 2025',
-    href: 'https://blueangelclinical.com/blog',
-  },
-];
+export const newsItems = newsData;

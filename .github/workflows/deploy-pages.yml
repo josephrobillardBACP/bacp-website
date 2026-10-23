@@ -31,10 +31,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install browser for search-ready HTML
+        run: npx playwright install --with-deps chromium
+
       - name: Build
-        # Served from the apex custom domain (see public/CNAME), so the site
-        # lives at the root — not under a /<repo>/ project subpath. Vite's
-        # default base is already "/", so no --base override is needed.
+        env:
+          VITE_SITE_URL: https://blueangelclinical.com
+          VITE_NOINDEX: "false"
         run: npm run build
 
       - name: Upload artifact

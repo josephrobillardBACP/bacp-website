@@ -31,6 +31,7 @@ function BeAPartnerPage() {
       <PageHero
         eyebrow="Become a Partner"
         title="Choose the conversation that fits your next chapter."
+        lede="Looking for a concierge medicine practice partner? Talk with Blue Angel about practice succession, operational support or joining an established concierge practice. Choose the path that fits your goals to start a confidential conversation."
         image={partnerConversation}
         imageMobile={partnerConversationSm}
         decoration={<NetworkMotif variant="partner" className="opacity-40" />}

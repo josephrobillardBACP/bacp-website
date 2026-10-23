@@ -12,6 +12,7 @@ import SuccessionPlanningGuidePage from "./pages/SuccessionPlanningGuidePage";
 import JoiningPracticePage from "./pages/JoiningPracticePage";
 import CareersPage from "./pages/CareersPage";
 import BlogPage from "./pages/BlogPage";
+import NewsStoryPage from "./pages/NewsStoryPage";
 import BeAPartnerPage from "./pages/BeAPartnerPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
@@ -54,6 +55,7 @@ const App = () => (
           />
           <Route path="/resources/careers" element={<CareersPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:storyId" element={<NewsStoryPage />} />
           <Route path="/be-a-partner" element={<BeAPartnerPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-service" element={<TermsOfServicePage />} />

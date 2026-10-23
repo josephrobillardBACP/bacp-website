@@ -1,0 +1,64 @@
+{
+  "siteName": "Blue Angel Clinical Partners",
+  "alternateName": [
+    "Blue Angel",
+    "BACP"
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "title": "Concierge Medicine Practice Partnerships | Blue Angel",
+      "description": "Blue Angel supports independent concierge physicians with practice operations, financial backing and succession planning while preserving clinical autonomy."
+    },
+    {
+      "path": "/about",
+      "title": "Concierge Physician Partnership Model | Blue Angel",
+      "description": "Meet Blue Angel Clinical Partners, our partner physicians and the team supporting independent concierge practices with operational resources and financial backing."
+    },
+    {
+      "path": "/services",
+      "title": "Concierge Practice Management & Physician Support | Blue Angel",
+      "description": "Explore administrative support, staffing, recruiting, financial services and shared clinical resources for independent concierge physician practices."
+    },
+    {
+      "path": "/resources",
+      "title": "Concierge Physician Practice Resources | Blue Angel",
+      "description": "Explore resources for concierge physicians considering practice succession, joining an established practice or a career with Blue Angel Clinical Partners."
+    },
+    {
+      "path": "/resources/succession-planning",
+      "title": "Sell Your Concierge Practice & Plan Succession | Blue Angel",
+      "description": "Plan the transition or sale of your concierge practice with a tailored partnership, successor recruitment and support for practice and patient-care continuity."
+    },
+    {
+      "path": "/resources/succession-planning-guide",
+      "title": "Concierge Practice Succession Planning Guide | Blue Angel",
+      "description": "A physician-first guide to preparing for a concierge practice transition: personal readiness, partnership options, the process and protecting your legacy of care."
+    },
+    {
+      "path": "/resources/joining-a-practice",
+      "title": "Join a Concierge Medical Practice & Build Ownership | Blue Angel",
+      "description": "Join an established concierge practice with a patient panel, operational support and a path to equity ownership through Blue Angel Clinical Partners."
+    },
+    {
+      "path": "/resources/careers",
+      "title": "Concierge Medicine Careers & Open Roles | Blue Angel",
+      "description": "Explore open roles at Blue Angel Clinical Partners and its concierge practice network. Help support independent physicians and relationship-based patient care."
+    },
+    {
+      "path": "/be-a-partner",
+      "title": "Find a Concierge Medicine Practice Partner | Blue Angel",
+      "description": "Own a concierge practice or want to join one? Start a confidential conversation with Blue Angel about partnership, succession or a path into practice ownership."
+    },
+    {
+      "path": "/privacy-policy",
+      "title": "Privacy Policy | Blue Angel Clinical Partners",
+      "description": "Read how Blue Angel Clinical Partners collects, uses and protects information submitted through its website."
+    },
+    {
+      "path": "/terms-of-service",
+      "title": "Terms of Service | Blue Angel Clinical Partners",
+      "description": "Read the terms governing use of the Blue Angel Clinical Partners website."
+    }
+  ]
+}

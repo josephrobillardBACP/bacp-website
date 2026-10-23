@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
+import HomeHero from '@/components/HomeHero';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 import ComparisonTable from '@/components/ComparisonTable';
@@ -10,9 +10,10 @@ import Reveal from '@/components/Reveal';
 import NetworkMotif from '@/components/NetworkMotif';
 import { rise } from '@/lib/motion';
 import { PrimaryLink, OutlineLink, TextLink } from '@/components/Buttons';
-import networkDesktop from '@/assets/hero-network-2026.webp';
-import networkMobile from '@/assets/hero-network-mobile-2026.webp';
 import { partners } from '@/content/blueangel';
+import SiteSeo from '@/components/SiteSeo';
+import PartnershipQuestions from '@/components/PartnershipQuestions';
+import { siteSeo } from '@/lib/siteSeo';
 
 const pillars = [
   {
@@ -36,70 +37,13 @@ const pillars = [
 ];
 
 function HomePage() {
-  useEffect(() => {
-    document.title = 'Blue Angel Clinical Partners';
-  }, []);
-
   return (
     <>
+      <SiteSeo page={siteSeo.pages[0]} />
       <Header />
 
       <main>
-        {/* The opening view keeps the full cover art and message card together. */}
-        <section className="relative isolate flex min-h-[calc(100svh-5rem)] overflow-hidden bg-white">
-          <div className="absolute inset-0">
-            <picture>
-              <source media="(max-width: 768px)" srcSet={networkMobile} />
-              <img
-                src={networkDesktop}
-                alt="Watercolour of independent concierge practices across the Bay Area, linked by glowing lines, with the San Francisco skyline and Bay Bridge beyond"
-                className="h-full w-full object-cover"
-                loading="eager"
-                fetchpriority="high"
-              />
-            </picture>
-            <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/5 to-transparent" />
-          </div>
-
-          {/* Below 1920px this is the live site's column exactly — a centred
-              1312px (82rem) block with 28px padding — so the card lands where
-              it does on the deployed site: 84px from the left at 1440, 324px at
-              1920. Written in px, not rem, because the root size scales above
-              1600px and would otherwise shift these off the live numbers.
-
-              From 1920px up it holds that same share of the screen, 16.875vw,
-              which is exactly 324px at 1920 so the two rules meet without a
-              jump. On the live site the gap instead keeps growing with the
-              centred column and reaches 644px at 2560, which pushes the card
-              far into the middle of the artwork. */}
-          <div className="relative z-10 mx-auto flex w-full max-w-[1312px] items-center px-3 py-6 sm:px-5 sm:py-8 lg:px-[28px] lg:py-10 min-[1920px]:mx-0 min-[1920px]:max-w-none min-[1920px]:pl-[16.875vw]">
-            <motion.div
-              initial={{ opacity: 0, y: 32 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="w-full max-w-[30rem] bg-white/70 p-5 shadow-[0_20px_60px_rgba(6,56,98,0.13)] backdrop-blur-[3px] sm:p-6 lg:p-7"
-            >
-              {/* Arbitrary sizes here on purpose: index.css enlarges `main .text-xs`
-                and `main p` site-wide, which would override the standard classes. */}
-              <span className="text-[0.875rem] font-semibold uppercase tracking-[0.2em] text-steely-blue">
-                Blue Angel Clinical Partners
-              </span>
-              <h1 className="mt-4 font-serif text-2xl leading-[1.08] tracking-tight text-navy sm:text-3xl lg:text-4xl">
-                Empowering physicians,
-                <span className="block">preserving autonomy.</span>
-              </h1>
-              <p className="hero-text mt-4 max-w-xl text-base leading-relaxed text-foreground/80 sm:text-[1.0625rem]">
-                We give independent practices the financial and operational backing of a
-                large group, while patient relations stay with the physicians, exactly
-                where they belong.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <PrimaryLink to="/be-a-partner">Become a Partner</PrimaryLink>
-                <OutlineLink to="/about">About Blue Angel</OutlineLink>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <HomeHero />
 
         {/* Positioning statement */}
         <section className="relative overflow-hidden bg-white py-20 md:py-28">
@@ -107,18 +51,18 @@ function HomePage() {
           <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div {...rise} className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
               <h2 className="font-serif text-3xl leading-tight tracking-tight text-navy sm:text-4xl">
-                A partner built for independent medicine
+                A partner built for independent concierge medicine
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-foreground/80">
                 <p>
                   Physicians are usually offered two options: carry every administrative
-                  burden alone, or sell the practice and accept someone elses protocols.
+                  burden alone, or sell the practice and accept someone else’s protocols.
                   Blue Angel exists because neither is a good answer.
                 </p>
                 <p>
-                  We take on the operational side of the practice and leave the clinical
-                  side alone, a distinction that shapes everything else about how we
-                  partner.
+                  We partner with independent concierge physicians to take on the
+                  operational side of the practice and leave the clinical side in their
+                  hands, a distinction that shapes everything else about our partnership.
                 </p>
               </div>
             </motion.div>
@@ -232,6 +176,7 @@ function HomePage() {
           </div>
         </section>
 
+        <PartnershipQuestions />
         <CTASection />
       </main>
 

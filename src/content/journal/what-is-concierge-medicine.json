@@ -1,0 +1,141 @@
+{
+  "slug": "what-is-concierge-medicine",
+  "title": "What Is Concierge Medicine? A Physician’s Guide to Independent Practice",
+  "description": "A practical guide to concierge medicine, membership models, clinical autonomy, and the operational support an independent physician practice needs.",
+  "excerpt": "A membership model can create room for a different kind of patient relationship. Building a durable practice around that relationship takes clear expectations, a capable team, and a plan for what comes next.",
+  "category": "Concierge medicine",
+  "format": "Feature",
+  "status": "draft",
+  "publishedAt": "2026-10-16T19:08:44.577Z",
+  "modifiedAt": "2026-10-16T19:08:44.577Z",
+  "author": "Blue Angel Journal",
+  "aiAssisted": true,
+  "intro": "For an independent physician, the appeal of concierge medicine is usually less about a new label and more about protecting a familiar ambition: knowing your patients well and having a practice that supports that relationship. The membership model is one part of the picture. The day-to-day work of running the business is another.",
+  "takeaways": [
+    "A concierge membership describes an arrangement with a practice; its actual scope depends on the agreement.",
+    "Concierge medicine and direct primary care overlap in their emphasis on relationships, but their payment arrangements can differ.",
+    "Clinical independence needs operational support and a thoughtful plan for continuity."
+  ],
+  "sections": [
+    {
+      "id": "membership-model",
+      "title": "What does concierge medicine mean?",
+      "paragraphs": [
+        "Concierge medicine generally involves a membership or retainer fee paid to a physician practice. The membership agreement sets out what that fee provides. Depending on the practice, that might include particular access arrangements, additional time, or services outside an insurance benefit. The useful question is not simply whether a practice calls itself concierge, but what its agreement actually promises.",
+        "For physicians, this makes clarity a practical part of the model. How do patients reach the office? Who responds when their physician is away? Which services are included, and which are billed separately? A well-explained arrangement gives both patients and the practice a shared starting point."
+      ]
+    },
+    {
+      "id": "concierge-and-dpc",
+      "title": "Concierge medicine and direct primary care are not interchangeable",
+      "paragraphs": [
+        "The American Academy of Family Physicians describes direct primary care, or DPC, as a model in which patients pay a periodic fee for defined primary care services, without the practice billing insurance for those covered services. Concierge practices may combine a membership fee with insurance billing. Individual arrangements vary, so the label alone is not enough to understand a practice’s finances or a patient’s costs.",
+        "A membership should not be treated as a substitute for broader insurance coverage. Medicare states that it does not cover concierge membership fees, and physicians serving Medicare patients still have to follow applicable Medicare rules. Those details deserve a clear explanation before anyone signs an agreement."
+      ],
+      "sourceIds": [
+        "aafp",
+        "medicare"
+      ]
+    },
+    {
+      "id": "relationships",
+      "title": "Start with the patient relationship, then design the workflows",
+      "paragraphs": [
+        "A relationship-based practice needs routines that make its intentions visible. Consider a patient who sends a question while their physician is out of the office. The relationship is better supported when the office has an agreed route for the message, an appropriate covering clinician, and a clear explanation of what the patient should expect. That is a workflow question as much as a membership question.",
+        "The same reasoning applies to scheduling, referrals, and follow-up. Each practice has to decide how work is assigned and how the team knows it has been completed. No single set of access promises fits every office. The important step is to make promises the team can consistently support, then communicate them accurately."
+      ]
+    },
+    {
+      "id": "independence",
+      "title": "Separate clinical independence from doing everything yourself",
+      "paragraphs": [
+        "Independent practice does not have to mean personally carrying every administrative responsibility. A physician can retain responsibility for patient care while receiving help with accounting, staffing, technology, and other business functions. The useful distinction is between supporting the practice and directing the medicine.",
+        "Blue Angel Clinical Partners describes its approach in those terms: patient relations stay with the physicians, while a dedicated team provides financial and operational support. Its services are intended to be tailored to individual practices. For an owner considering any partnership, that distinction should become a specific conversation about responsibilities, decision-making, and how the relationship will work in daily practice."
+      ],
+      "link": {
+        "label": "Explore Blue Angel’s practice support",
+        "href": "/services"
+      }
+    },
+    {
+      "id": "questions",
+      "title": "Five questions worth asking about the operating model",
+      "paragraphs": [
+        "Whether you are an owner, a physician looking to join a practice, or someone planning ahead, these questions can make an early conversation more useful:"
+      ],
+      "bullets": [
+        "What does the membership include, and how are services outside it explained?",
+        "Which decisions remain with the physician, and how are responsibilities documented?",
+        "Who handles recruiting, staffing changes, vendor relationships, and the routine financial work?",
+        "How does the practice arrange coverage when a physician is away?",
+        "What happens to patient relationships and operational knowledge when a physician eventually leaves?"
+      ]
+    },
+    {
+      "id": "succession",
+      "title": "Think about continuity before it becomes urgent",
+      "paragraphs": [
+        "A practice is more than its appointment schedule. It also holds relationships, staff experience, and knowledge that may live mostly in the owner’s head. A succession conversation can begin by identifying that knowledge: how the office runs, what patients value, and what a future physician would need to understand before taking responsibility for a panel.",
+        "That preparation need not amount to a decision to retire immediately. It can be a way to create choices. Blue Angel’s succession resources describe operational continuity and physician transition as parts of a planned process. Owners should use any initial discussion to clarify their own readiness, preferred future role, and expectations for patient care, rather than assume every partnership follows the same structure."
+      ],
+      "link": {
+        "label": "Read the succession planning guide",
+        "href": "/resources/succession-planning-guide"
+      }
+    },
+    {
+      "id": "joining",
+      "title": "For a physician joining a practice, fit matters",
+      "paragraphs": [
+        "A doctor considering an established concierge practice should ask about the actual role as carefully as the model. Meet the team. Understand the existing patient panel, the coverage expectations, and the support available. Ask how introductions are handled and how a new physician learns the office’s habits before proposing changes.",
+        "A useful next step is a conversation grounded in those details. For an owner, that might concern support or succession. For a physician looking to join, it might concern practice fit and available roles. The aim is the same: a practice structure that gives the clinical relationship room to continue."
+      ],
+      "link": {
+        "label": "Learn about joining a Blue Angel practice",
+        "href": "/resources/joining-a-practice"
+      }
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does concierge medicine replace health insurance?",
+      "answer": "A practice membership should not be assumed to cover hospital care, specialist care, or every other health expense. Ask what the membership includes and how it works alongside your insurance. Medicare does not cover concierge membership fees."
+    },
+    {
+      "question": "Do all concierge practices operate the same way?",
+      "answer": "No. Membership scope, access arrangements, insurance billing, coverage, and staffing can vary. Read the individual agreement and ask the practice to explain its approach."
+    },
+    {
+      "question": "Can a concierge practice receive support while staying independent?",
+      "answer": "Physicians can explore support arrangements that separate business operations from clinical decisions. The actual allocation of responsibilities depends on the agreement; Blue Angel describes tailored partnerships designed to preserve physician autonomy."
+    }
+  ],
+  "sources": [
+    {
+      "id": "aafp",
+      "label": "American Academy of Family Physicians: Direct Primary Care",
+      "url": "https://www.aafp.org/practice-operations/practice-and-payment-models/direct-primary-care",
+      "checkedOn": "2026-10-16"
+    },
+    {
+      "id": "medicare",
+      "label": "Medicare.gov: Concierge care",
+      "url": "https://www.medicare.gov/coverage/concierge-care",
+      "checkedOn": "2026-10-16"
+    }
+  ],
+  "relatedLinks": [
+    {
+      "label": "Practice services",
+      "href": "/services"
+    },
+    {
+      "label": "Succession planning",
+      "href": "/resources/succession-planning"
+    },
+    {
+      "label": "Join a practice",
+      "href": "/resources/joining-a-practice"
+    }
+  ]
+}

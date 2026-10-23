@@ -1,0 +1,159 @@
+.journal-container { width: min(100% - 4rem, 76rem); margin-inline: auto; }
+.journal-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 1.75rem; min-height: 5rem; border-bottom: 1px solid hsl(var(--navy) / .12); color: hsl(var(--dark-blue-gray)); }
+.journal-nav a { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; font-size: 1.05rem; text-decoration: none; }
+.journal-nav a.active { color: hsl(var(--navy)); text-decoration: underline; text-underline-offset: 8px; }
+.journal-nav a:hover, .journal-back:hover { color: hsl(var(--steely-blue)); }
+.journal-eyebrow { display: block; color: hsl(var(--steely-blue)); font-size: .8rem; font-weight: 600; line-height: 1.6; letter-spacing: .12em; text-transform: uppercase; }
+.journal-eyebrow span { padding-inline: .3rem; opacity: .5; }
+.journal-index { background: #fff; padding-bottom: 6rem; }
+.journal-section-heading { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-top: 4rem; }
+.journal-section-heading h2, .journal-guide-section h2, .journal-press h2 { font-size: clamp(2rem, 3vw, 3rem); font-weight: 400; line-height: 1.15; margin-top: .75rem; }
+.journal-search { display: flex; align-items: center; gap: .7rem; padding: .4rem 1rem; border: 1px solid hsl(var(--navy) / .2); }
+.journal-search input { min-width: 0; width: 13rem; max-width: 100%; padding: .3rem 0; font-size: 1.05rem; background: transparent; line-height: 1.5; outline: none; }
+.journal-search:focus-within { outline: 2px solid hsl(var(--steely-blue)); outline-offset: 3px; }
+.journal-result-count { color: hsl(var(--dark-blue-gray)); font-size: .95rem; margin: 1rem 0 1.5rem; }
+.journal-feature-layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); }
+.journal-feature { display: block; border: 1px solid hsl(var(--navy) / .15); padding: clamp(1.5rem, 4vw, 3rem); transition: background .2s; }
+.journal-feature:hover { background: #f5f7f8; }
+.journal-feature h3 { max-width: 22ch; color: hsl(var(--navy)); font-size: clamp(2rem, 3vw, 3rem); font-weight: 400; line-height: 1.16; letter-spacing: -.02em; margin: 1.4rem 0; }
+.journal-feature p, .journal-card p { color: hsl(var(--dark-blue-gray)); font-size: 1.2rem; line-height: 1.65; }
+.journal-meta { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; color: hsl(var(--dark-blue-gray)); font-size: 1rem; line-height: 1.6; }
+.journal-feature .journal-meta { margin: 1.5rem 0; }
+.journal-inline-link { display: inline-flex; align-items: center; gap: .65rem; color: hsl(var(--navy)); font-size: 1.1rem; font-weight: 600; min-height: 44px; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: hsl(var(--navy) / .3); }
+.journal-inline-link:hover { color: hsl(var(--steely-blue)); }
+.journal-editor-note { background: #edf2f5; padding: clamp(1.5rem, 3vw, 2.5rem); }
+.journal-editor-note h3 { color: hsl(var(--navy)); font-size: 2rem; line-height: 1.2; font-weight: 400; margin: 1.4rem 0; }
+.journal-editor-note p { font-size: 1.15rem; line-height: 1.65; color: hsl(var(--dark-blue-gray)); margin-top: 1rem; }
+.journal-editor-note .journal-inline-link { margin-top: 1rem; }
+.journal-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.journal-card { border: 1px solid hsl(var(--navy) / .15); padding: 1.5rem; background: #fff; }
+.journal-card h3 { font-size: 1.8rem; line-height: 1.2; margin: 1rem 0; }
+.journal-card .journal-meta { margin: 1.5rem 0 .5rem; }
+.journal-guide-section { background: #f1f4f5; padding-block: 5rem; }
+.journal-guide { position: relative; padding: 1.5rem 3rem 1.5rem 0; border-top: 1px solid hsl(var(--navy) / .25); }
+.journal-guide h3 { font-size: 1.6rem; line-height: 1.2; font-weight: 400; }
+.journal-guide p { font-size: 1.1rem; line-height: 1.6; margin-top: .75rem; color: hsl(var(--dark-blue-gray)); }
+.journal-guide > svg { position: absolute; right: .25rem; top: 1.5rem; }
+.journal-guide:hover h3 { color: hsl(var(--steely-blue)); }
+.journal-press { padding-block: 5rem; background: #fff; scroll-margin-top: 6rem; }
+.journal-press h2 { margin-bottom: 2rem; }
+.journal-press-item { display: grid; grid-template-columns: 12rem minmax(0, 1fr) 1.5rem; gap: 2rem; align-items: start; padding-block: 2rem; border-top: 1px solid hsl(var(--navy) / .12); }
+.journal-press-item h3 { font-size: 1.7rem; font-weight: 400; line-height: 1.3; }
+.journal-press-item:hover h3 { color: hsl(var(--steely-blue)); }
+.journal-empty { padding: 3rem 0; }
+.journal-empty h3 { font-size: 2rem; }
+.journal-empty button { margin-top: 1rem; text-decoration: underline; min-height: 44px; }
+.journal-article { background: #fff; padding-bottom: 6rem; }
+.journal-article__header { max-width: 54rem; margin-inline: auto; padding: 3rem 2rem 3.5rem; }
+.journal-back { display: inline-flex; gap: .5rem; align-items: center; min-height: 44px; font-size: 1rem; margin-bottom: 2rem; }
+.journal-article__header h1 { font-size: clamp(2.3rem, 4.2vw, 4rem); font-weight: 400; letter-spacing: -.025em; line-height: 1.1; margin-top: 1.25rem; }
+.journal-article__dek { font-size: 1.35rem; line-height: 1.65; color: hsl(var(--dark-blue-gray)); margin: 1.5rem 0 1.75rem; }
+.journal-article__layout { width: min(100% - 4rem, 76rem); margin-inline: auto; display: grid; grid-template-columns: 15rem minmax(0, 46rem); justify-content: center; gap: 4rem; border-top: 1px solid hsl(var(--navy) / .12); padding-top: 3rem; }
+.journal-toc { align-self: start; position: sticky; top: 7rem; }
+.journal-toc nav { display: flex; flex-direction: column; gap: .8rem; margin-top: 1.25rem; }
+.journal-toc a { font-size: 1.05rem; line-height: 1.4; color: hsl(var(--dark-blue-gray)); padding-block: .3rem; }
+.journal-toc a:hover { color: hsl(var(--navy)); text-decoration: underline; }
+.journal-article__body { min-width: 0; }
+.journal-article__body p, .journal-article__body li { font-size: 1.25rem; line-height: 1.8; }
+.journal-intro { margin-bottom: 2rem; }
+.journal-takeaways { border-left: 2px solid hsl(var(--steely-blue)); background: #f1f4f5; padding: 1.5rem 2rem; margin-block: 2rem 3rem; }
+.journal-takeaways h2 { font-size: 1.6rem; font-weight: 400; line-height: 1.2; }
+.journal-takeaways ul, .journal-section ul, .journal-sources ol { padding-left: 1.25rem; margin-top: 1rem; list-style: disc; }
+.journal-takeaways li, .journal-section li { padding-left: .25rem; margin-bottom: .7rem; }
+.journal-section { scroll-margin-top: 7rem; margin-top: 3rem; }
+.journal-section h2, .journal-next h2 { font-size: clamp(1.75rem, 2.4vw, 2.25rem); line-height: 1.2; font-weight: 400; letter-spacing: -.01em; margin-bottom: 1.25rem; }
+.journal-section p + p { margin-top: 1.25rem; }
+.journal-section .journal-inline-link { margin-top: 1rem; }
+.journal-source-note { font-size: .95rem; line-height: 1.6; color: hsl(var(--dark-blue-gray)); margin-top: 1rem; }
+.journal-source-note a, .journal-sources a { text-decoration: underline; text-underline-offset: 3px; }
+.journal-faq { margin-top: 1.5rem; }
+.journal-faq h3 { font-size: 1.4rem; font-weight: 500; margin-bottom: .5rem; line-height: 1.4; }
+.journal-sources { border-top: 1px solid hsl(var(--navy) / .15); padding-top: 2rem; }
+.journal-sources ol { list-style: decimal; }
+.journal-sources li, .journal-sources p { font-size: 1.05rem; line-height: 1.65; overflow-wrap: anywhere; }
+.journal-sources li span { color: hsl(var(--dark-blue-gray)); }
+.journal-sources p { margin-top: 1.5rem; color: hsl(var(--dark-blue-gray)); }
+.journal-next { background: #edf2f5; padding: 2rem; margin-top: 3rem; }
+.journal-next h2 { margin: 1rem 0; }
+.journal-related { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; margin-top: 1rem; }
+.journal-related a { display: inline-flex; align-items: center; gap: .5rem; text-decoration: underline; min-height: 44px; font-size: 1.1rem; }
+.calendar-header { padding-block: 4rem 3rem; max-width: 60rem; }
+.calendar-header h1 { font-size: clamp(2.4rem, 4.5vw, 4rem); line-height: 1.1; letter-spacing: -.025em; font-weight: 400; margin: 1.2rem 0; }
+.calendar-header > p { font-size: 1.35rem; line-height: 1.7; color: hsl(var(--dark-blue-gray)); max-width: 47rem; }
+.calendar-stats { display: flex; flex-wrap: wrap; gap: 2rem 4rem; margin-top: 2.5rem; }
+.calendar-stats strong { display: block; font-size: 2.2rem; line-height: 1.2; font-weight: 400; }
+.calendar-stats span { display: block; font-size: 1rem; color: hsl(var(--dark-blue-gray)); margin-top: .4rem; }
+.calendar-workflow { background: #eaf0f3; padding: 2rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 2rem; }
+.calendar-workflow h2 { font-size: 2rem; font-weight: 400; line-height: 1.2; margin: 1rem 0; }
+.calendar-workflow p, .calendar-workflow li { font-size: 1.1rem; line-height: 1.65; color: hsl(var(--dark-blue-gray)); }
+.calendar-workflow ol { counter-reset: workflow; display: grid; gap: 1rem; }
+.calendar-workflow li { position: relative; padding-left: 2rem; counter-increment: workflow; }
+.calendar-workflow li::before { content: counter(workflow, decimal-leading-zero); position: absolute; left: 0; color: hsl(var(--steely-blue)); font-size: .9rem; top: .2rem; }
+.calendar-workflow li strong { display: block; color: hsl(var(--navy)); font-weight: 500; }
+.calendar-local-note { grid-column: 1 / -1; border-top: 1px solid hsl(var(--navy) / .15); padding-top: 1rem; font-size: 1rem !important; }
+.calendar-next { display: grid; gap: .5rem; margin-block: 2rem; font-size: 1.15rem; line-height: 1.6; }
+.calendar-next span { font-size: .9rem; color: hsl(var(--steely-blue)); text-transform: uppercase; letter-spacing: .08em; }
+.calendar-next strong { font-weight: 500; }
+.calendar-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem 1.5rem; margin-block: 3rem 2rem; }
+.calendar-controls label { display: grid; gap: .4rem; font-size: 1rem; line-height: 1.4; }
+.calendar-controls select { background: #fff; border: 1px solid hsl(var(--navy) / .2); font-size: 1rem; line-height: 1.4; padding: .7rem 2.5rem .7rem .8rem; min-height: 44px; max-width: 100%; }
+.calendar-controls > span { margin-left: auto; font-size: 1rem; padding-bottom: .75rem; color: hsl(var(--dark-blue-gray)); }
+.calendar-entry { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 2.5rem; border-top: 1px solid hsl(var(--navy) / .15); padding-block: 2.5rem; }
+.calendar-entry__date { display: flex; flex-direction: column; align-items: start; gap: .6rem; }
+.calendar-entry__date time { font-size: 1.35rem; line-height: 1.3; }
+.calendar-entry__date > span:not(.calendar-status) { font-size: .95rem; color: hsl(var(--dark-blue-gray)); }
+.calendar-status { display: inline-flex; gap: .35rem; align-items: center; border: 1px solid hsl(var(--navy) / .15); padding: .15rem .6rem; color: hsl(var(--dark-blue-gray)); font-size: .9rem; line-height: 1.5; }
+.calendar-status--published { color: #285c48; border-color: #a9c6b9; background: #edf6ef; }
+.calendar-entry h2 { font-size: 1.9rem; line-height: 1.2; font-weight: 400; margin: .6rem 0 1rem; max-width: 36ch; }
+.calendar-entry p { font-size: 1.1rem; line-height: 1.7; color: hsl(var(--dark-blue-gray)); max-width: 51rem; }
+.calendar-entry details { margin-top: 1rem; }
+.calendar-entry summary { cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; font-size: 1rem; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+.calendar-entry details[open] summary svg { transform: rotate(180deg); }
+.calendar-entry dl { padding: 1.2rem 1.5rem; background: #edf2f4; display: grid; gap: 1rem; margin: .5rem 0 1rem; }
+.calendar-entry dt { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: hsl(var(--steely-blue)); }
+.calendar-entry dd { font-size: 1.05rem; line-height: 1.6; margin-top: .25rem; }
+.calendar-entry dd a { display: inline-flex; align-items: center; gap: .5rem; text-decoration: underline; }
+.calendar-footer { padding-block: 2rem 4rem; font-size: 1.05rem; line-height: 1.6; color: hsl(var(--dark-blue-gray)); border-top: 1px solid hsl(var(--navy) / .15); }
+.journal-container a:focus-visible, .journal-article a:focus-visible, .calendar-controls select:focus-visible, .calendar-entry summary:focus-visible { outline: 2px solid hsl(var(--steely-blue)); outline-offset: 4px; }
+@media (max-width: 900px) {
+  .journal-feature-layout { grid-template-columns: 1fr; }
+  .journal-article__layout { grid-template-columns: 1fr; gap: 2rem; max-width: 46rem; }
+  .journal-toc { position: static; }
+  .journal-toc nav { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem 1.5rem; }
+  .journal-card-grid { grid-template-columns: 1fr; }
+  .journal-press-item { grid-template-columns: minmax(0, 1fr) 1.5rem; gap: 1rem; }
+  .journal-press-item .journal-meta { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .journal-container { width: calc(100% - 2.5rem); }
+  .journal-nav { gap: .5rem 1rem; padding-block: .75rem; }
+  .journal-nav a { font-size: .98rem; }
+  .journal-section-heading { margin-top: 2.5rem; }
+  .journal-search { width: 100%; }
+  .journal-search input { width: 100%; }
+  .journal-index { padding-bottom: 3rem; }
+  .journal-guide-section, .journal-press { padding-block: 3rem; }
+  .journal-article__header { padding: 2rem 1.25rem; }
+  .journal-article__dek { font-size: 1.2rem; }
+  .journal-article__layout { width: calc(100% - 2.5rem); padding-top: 2rem; }
+  .journal-toc nav { grid-template-columns: 1fr; }
+  .journal-toc a { font-size: 1rem; }
+  .journal-article__body p, .journal-article__body li { font-size: 1.15rem; line-height: 1.75; }
+  .journal-takeaways, .journal-next { padding: 1.25rem; }
+  .journal-sources p, .journal-sources li { font-size: 1rem; }
+  .calendar-header { padding-block: 2.5rem; }
+  .calendar-header > p { font-size: 1.2rem; }
+  .calendar-stats { gap: 1.5rem 2rem; }
+  .calendar-stats strong { font-size: 1.8rem; }
+  .calendar-workflow { grid-template-columns: 1fr; padding: 1.25rem; gap: 1.5rem; }
+  .calendar-entry { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 2rem; }
+  .calendar-entry__date { flex-direction: row; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; }
+  .calendar-entry__date time { width: 100%; }
+  .calendar-entry h2 { font-size: 1.65rem; }
+  .calendar-controls { gap: 1rem; }
+  .calendar-controls label { flex: 1 1 11rem; }
+  .calendar-controls > span { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journal-feature { transition: none; }
+}

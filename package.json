@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/build-site-seo.mjs && node scripts/build-journal.mjs && node scripts/prerender-site.mjs",
     "build:dev": "vite build --mode development",
+    "postbuild:dev": "node scripts/build-site-seo.mjs && node scripts/build-journal.mjs && node scripts/prerender-site.mjs",
+    "journal:check": "node scripts/build-journal.mjs --check",
+    "journal:due": "node scripts/journal-due.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
