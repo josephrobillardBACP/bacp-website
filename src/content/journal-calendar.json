@@ -1,7 +1,7 @@
 {
   "websitePublicationEnabled": false,
   "editorialCalendarUrl": "https://docs.google.com/spreadsheets/d/1-OPgaEdp5yuf94KKrxwdzMsBUzv-qFfOZggnZR4M6tg/edit?usp=drivesdk",
-  "firstDraftUrl": "https://docs.google.com/document/d/10F3lQsG9hSY8ZuMU30xKPNnWXzpIZTXr2rLXGBct5hg",
+  "firstDraftUrl": "https://docs.google.com/document/d/1DTbuWakzGFDq7JSdYZb0U0gJjY--M05zFYxs0NJH25s/edit",
   "timezone": "America/Los_Angeles",
   "publishTime": "09:00",
   "startsOn": "2026-10-16",
@@ -293,5 +293,8 @@
       "internalLink": "/resources",
       "sourceGuidance": "Existing journal articles, BACP resources and updated authoritative sources."
     }
+  ],
+  "manuallyPublishedSlugs": [
+    "what-is-concierge-medicine"
   ]
 }

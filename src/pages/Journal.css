@@ -157,3 +157,24 @@
 @media (prefers-reduced-motion: reduce) {
   .journal-feature { transition: none; }
 }
+
+/* Emphasize inline article/source references; navigation keeps its original style. */
+.journal-article .journal-text-link {
+  color: #175da8;
+  font-weight: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .2em;
+  text-decoration-skip-ink: auto;
+  border-radius: 2px;
+}
+.journal-article .journal-text-link:hover {
+  color: #103f79;
+  background-color: #edf4fc;
+}
+.journal-article .journal-text-link:focus-visible {
+  outline: 2px solid #175da8;
+  outline-offset: 4px;
+  background-color: #edf4fc;
+}

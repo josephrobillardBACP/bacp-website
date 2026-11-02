@@ -5,7 +5,7 @@ const now = new Date('2026-10-17T16:00:00Z');
 
 describe('Journal publication boundaries', () => {
   it('keeps drafts and future-dated articles out of the public journal', () => {
-    const published = { ...journalArticles[0], status: 'published' as const };
+    const published = { ...journalArticles[0], publishedAt: '2026-10-16T16:00:00Z', status: 'published' as const };
     const draft = { ...published, slug: 'draft', status: 'draft' as const };
     const future = { ...published, slug: 'future', publishedAt: '2027-04-01T16:00:00Z' };
     expect(getPublishedArticles([draft, future, published], now, true).map((article) => article.slug)).toEqual([published.slug]);
@@ -16,11 +16,18 @@ describe('Journal publication boundaries', () => {
     expect(calendarStatus(journalCalendar.entries[1], [], now)).toBe('Planned');
     expect(calendarStatus(journalCalendar.entries[0], journalArticles, now)).toBe('Awaiting generation');
   });
-  it('keeps Drive review drafts off the website even if a local article is accidentally marked published', () => {
+  it('publishes only the explicitly approved article while automatic publication remains paused', () => {
+    const approved = journalArticles[0];
+    const publicationDate = new Date('2026-11-02T20:00:00Z');
+    const unapproved = { ...approved, slug: 'unapproved', status: 'published' as const };
+    const draft = { ...approved, slug: 'draft', status: 'draft' as const };
+    const future = { ...approved, publishedAt: '2027-04-01T16:00:00Z' };
     expect(journalCalendar.websitePublicationEnabled).toBe(false);
-    expect(journalArticles[0].status).toBe('draft');
-    expect(getPublishedArticles()).toEqual([]);
-    expect(getPublishedArticles([{ ...journalArticles[0], status: 'published' }], now)).toEqual([]);
+    expect(approved.status).toBe('published');
+    expect(journalCalendar.manuallyPublishedSlugs).toEqual([approved.slug]);
+    expect(getPublishedArticles([approved, unapproved, draft], publicationDate).map((article) => article.slug)).toEqual([approved.slug]);
+    expect(getPublishedArticles([future], publicationDate)).toEqual([]);
+    expect(getPublishedArticles([approved], publicationDate, false, [])).toEqual([]);
   });
   it('plans 26 distinct weekly slots and 13 full features', () => {
     const entries = journalCalendar.entries;

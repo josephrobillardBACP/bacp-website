@@ -5,6 +5,7 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import BlogPage from './BlogPage';
 import NewsStoryPage from './NewsStoryPage';
 import { newsItems } from '@/content/blueangel';
+import { journalArticles } from '@/lib/journal';
 vi.mock('@/components/Page', () => ({ default: ({ children }: { children: ReactNode }) => <main>{children}</main> }));
 vi.mock('@/components/Reveal', () => ({ default: ({ children }: { children: ReactNode }) => <div>{children}</div> }));
 vi.mock('@/components/PageHero', () => ({ default: () => <h1>Latest news.</h1> }));
@@ -15,6 +16,19 @@ function view(entry = '/blog') {
   return render(<MemoryRouter initialEntries={[entry]}><Routes><Route path="/blog" element={<BlogPage />} /><Route path="/blog/:storyId" element={<NewsStoryPage />} /></Routes></MemoryRouter>);
 }
 describe('Original news story navigation', () => {
+  it('opens the approved newsletter from the listing and returns without a source footer', () => {
+    const article = journalArticles[0];
+    view();
+    fireEvent.click(screen.getByRole('link', { name: new RegExp('What Is Concierge Medicine') }));
+    expect(screen.getByRole('heading', { level: 1, name: article.title })).toBeVisible();
+    const body = screen.getByRole('article');
+    article.sections.flatMap((section) => section.paragraphs).forEach((paragraph) => expect(body.textContent).toContain(paragraph));
+    expect(body.textContent).not.toContain('This article was prepared with AI assistance');
+    expect(body.querySelector('#sources')).toBeNull();
+    fireEvent.click(screen.getByRole('link', { name: 'Back to Blog' }));
+    expect(screen.getByRole('heading', { name: 'Latest news.' })).toBeVisible();
+  });
+
   it.each(newsItems)('opens $id in the same tab and returns to the listing', (story) => {
     view();
     const link = screen.getByRole('link', { name: new RegExp(story.title.replace(/[.*+?^$()|[\]\\]/g, '\\$&')) });

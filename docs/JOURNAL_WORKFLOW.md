@@ -1,5 +1,22 @@
 # Blue Angel Journal: Google Drive editorial review
 
+## Explicit October 27 article release
+
+The user authorized live publication of the reviewed October 27 article. Only what-is-concierge-medicine is marked published and included in manuallyPublishedSlugs. Runtime and static builds publish that explicit exception while websitePublicationEnabled remains false, so scheduled generation/publication stays paused. Do not publish any other calendar entry without a new explicit instruction. The earlier development-only preview note below is superseded for this article.
+
+
+## Current editorial preference and local demo — November 1, 2026
+
+These instructions supersede conflicting older workflow text below.
+
+- Working article Docs: https://drive.google.com/drive/folders/1On7LdFBfi4Yd0gmAiwCbLAQlcbxjLLkq
+- Current first article: https://docs.google.com/document/d/1DTbuWakzGFDq7JSdYZb0U0gJjY--M05zFYxs0NJH25s/edit?usp=drivesdk
+- The Google Sheet now uses Content Calendar and Operating Manual. Read the current manual and linked Docs before writing; older Friday schedules in this file are historical.
+- Standing user preference: do not append a Sources/bibliography section, checked-on list, AI-assistance disclosure, research-history note or generic medical/legal disclaimer to reader-facing newsletters or website articles. Keep factual checks, source URLs and unresolved questions in internal editorial notes and the calendar. Preserve useful contextual caveats and ordinary in-text/related links.
+- The four drafted Newsletter Docs have been cleaned. Removed source records and freshness checks are retained in each calendar row’s Editorial notes cell note.
+- October 27 is shown locally at /blog/what-is-concierge-medicine, linked from /blog. It is guarded by import.meta.env.DEV. Production routing and automatic generated publication remain disabled; no push or deployment is authorized by this demo.
+- Current calendar cadence is Newsletter → Newsletter → Monthly, with separate semi-annual planning. Use the live Sheet rather than the old local calendar archive.
+
 Updated October 17, 2026. These instructions supersede the previous local auto-publication workflow.
 
 ## Current working files

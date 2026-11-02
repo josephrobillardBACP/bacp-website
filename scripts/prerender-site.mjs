@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { preview } from 'vite';
 import { chromium } from '@playwright/test';
@@ -8,6 +8,11 @@ import { chromium } from '@playwright/test';
 const root = process.cwd();
 const catalog = JSON.parse(await readFile(join(root, 'src/content/site-seo.json'), 'utf8'));
 const news = JSON.parse(await readFile(join(root, 'src/content/news.json'), 'utf8'));
+const calendar = JSON.parse(await readFile(join(root, 'src/content/journal-calendar.json'), 'utf8'));
+const articleDirectory = join(root, 'src/content/journal');
+const articleFiles = (await readdir(articleDirectory)).filter((file) => file.endsWith('.json'));
+const articles = await Promise.all(articleFiles.map(async (file) => JSON.parse(await readFile(join(articleDirectory, file), 'utf8'))));
+const publishedArticles = articles.filter((article) => article.status === 'published' && Date.parse(article.publishedAt) <= Date.now() && (calendar.websitePublicationEnabled || calendar.manuallyPublishedSlugs?.includes(article.slug)));
 const template = await readFile(join(root, 'dist/index.html'), 'utf8');
 const asset = template.match(/<script[^>]*src="([^"]*\/assets\/[^"]+)"/)?.[1];
 if (!asset) throw new Error('Cannot determine built asset base');
@@ -22,7 +27,7 @@ try {
   browser = await chromium.launch({ ...(channel ? { channel } : {}), headless: true });
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
   await context.route('**/*', (route) => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
-  const routes = [...catalog.pages.map((p) => p.path), '/blog', ...news.map((item) => '/blog/' + item.id)];
+  const routes = [...catalog.pages.map((p) => p.path), '/blog', ...news.map((item) => '/blog/' + item.id), ...publishedArticles.map((article) => '/blog/' + article.slug)];
   for (const route of routes) {
     const page = await context.newPage();
     const errors = [];

@@ -28,6 +28,7 @@ export type JournalArticle = {
   faqs: { question: string; answer: string }[];
   sources: JournalSource[];
   relatedLinks: JournalLink[];
+  inlineLinks?: JournalLink[];
 };
 export type CalendarEntry = {
   id: string;
@@ -45,10 +46,10 @@ export const journalCalendar = calendarData as Omit<typeof calendarData, 'entrie
 const files = import.meta.glob('@/content/journal/*.json', { eager: true, import: 'default' });
 export const journalArticles = Object.values(files) as JournalArticle[];
 
-export function getPublishedArticles(articles = journalArticles, now = new Date(), publicationEnabled = journalCalendar.websitePublicationEnabled) {
-  if (!publicationEnabled) return [];
+export function getPublishedArticles(articles = journalArticles, now = new Date(), publicationEnabled = journalCalendar.websitePublicationEnabled, manuallyPublishedSlugs: string[] = journalCalendar.manuallyPublishedSlugs ?? []) {
+  const manualPublication = new Set(manuallyPublishedSlugs);
   return articles
-    .filter((article) => article.status === 'published' && Date.parse(article.publishedAt) <= now.getTime())
+    .filter((article) => article.status === 'published' && Date.parse(article.publishedAt) <= now.getTime() && (publicationEnabled || manualPublication.has(article.slug)))
     .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
 }
 

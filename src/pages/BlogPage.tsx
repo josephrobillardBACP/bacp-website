@@ -6,10 +6,20 @@ import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import CTASection from '@/components/CTASection';
 import { newsItems } from '@/content/blueangel';
+import { formatJournalDate, getPublishedArticles } from '@/lib/journal';
 import blogDesk from '@/assets/blog-desk.webp';
 import blogDeskSm from '@/assets/blog-desk-sm.webp';
 
 function BlogPage() {
+  const listingItems = [
+    ...getPublishedArticles().map((article) => ({
+      id: article.slug,
+      title: article.title,
+      date: formatJournalDate(article.publishedAt),
+      category: 'Newsletter',
+    })),
+    ...newsItems,
+  ];
 
   return (
     <Page title="Blue Angel News & Press">
@@ -34,7 +44,7 @@ function BlogPage() {
           </Reveal>
 
           <div className="mt-10 border-t border-navy/10">
-            {newsItems.map((item, i) => (
+            {listingItems.map((item, i) => (
               <Reveal key={item.id} delay={i * 0.08}>
                 <article className="border-b border-navy/10">
                   <Link to={'/blog/' + item.id} className="group grid items-start gap-4 py-10 transition-colors duration-200 hover:bg-light-gray focus-visible:outline focus-visible:outline-2 focus-visible:outline-navy md:grid-cols-[14rem_1fr] md:gap-10 md:px-4">

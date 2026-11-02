@@ -4,9 +4,13 @@ import Page from '@/components/Page';
 import JournalSeo from '@/components/JournalSeo';
 import { newsItems } from '@/content/blueangel';
 import NotFound from './NotFound';
+import JournalArticlePage from './JournalArticlePage';
+import { getPublishedArticles } from '@/lib/journal';
 
 export default function NewsStoryPage() {
   const { storyId } = useParams();
+  const article = getPublishedArticles().find((item) => item.slug === storyId);
+  if (article) return <JournalArticlePage articleSlug={article.slug} />;
   const story = newsItems.find((item) => item.id === storyId);
   if (!story) return <NotFound />;
   return (
