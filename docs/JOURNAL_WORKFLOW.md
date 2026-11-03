@@ -1,5 +1,9 @@
 # Blue Angel Journal: Google Drive editorial review
 
+## Article presentation preference — November 2, 2026
+
+Do not display an author byline such as “By Blue Angel Journal” on website articles, including future articles. Keep the publication date and reading time. The shared article template includes a sticky desktop section outline that highlights the current section as the reader scrolls; its links match the article headings and remain usable without JavaScript. Preserve regular-weight inline source/article hyperlinks and the standing no-footer preference below.
+
 ## Explicit October 27 article release
 
 The user authorized live publication of the reviewed October 27 article. Only what-is-concierge-medicine is marked published and included in manuallyPublishedSlugs. Runtime and static builds publish that explicit exception while websitePublicationEnabled remains false, so scheduled generation/publication stays paused. Do not publish any other calendar entry without a new explicit instruction. The earlier development-only preview note below is superseded for this article.

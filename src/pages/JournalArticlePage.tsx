@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Page from '@/components/Page';
 import JournalSeo from '@/components/JournalSeo';
+import ArticleSectionTracker from '@/components/ArticleSectionTracker';
 import NotFound from '@/pages/NotFound';
 import { formatJournalDate, getPublishedArticles, readingMinutes } from '@/lib/journal';
 import './Journal.css';
@@ -36,19 +37,12 @@ export default function JournalArticlePage({ articleSlug }: { articleSlug?: stri
           <h1>{article.title}</h1>
           <p className="hero-text journal-article__dek">{article.excerpt}</p>
           <div className="journal-meta">
-            <span>By {article.author}</span>
             <time dateTime={article.publishedAt}>{formatJournalDate(article.publishedAt)}</time>
             <span>{readingMinutes(article)} min read</span>
           </div>
         </header>
         <div className="journal-article__layout">
-          <aside className="journal-toc">
-            <span className="journal-eyebrow">In this article</span>
-            <nav aria-label="Article contents">
-              {article.sections.map((section) => <a key={section.id} href={'#' + section.id}>{section.title}</a>)}
-              <a href="#common-questions">Common questions</a>
-            </nav>
-          </aside>
+          <ArticleSectionTracker sections={[...article.sections, { id: 'common-questions', title: 'Common questions' }]} />
           <div className="journal-article__body">
             <p className="journal-intro">{article.intro}</p>
             <aside className="journal-takeaways" aria-label="At a glance">
