@@ -17,7 +17,10 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest moved to 26.04, which Playwright 1.58.2 refuses
+    # ("Playwright does not support chromium on ubuntu26.04-x64"), breaking
+    # the prerender step on every push. Unpin once Playwright is upgraded.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,9 +39,9 @@ jobs:
 
       - name: Build
         env:
-          VITE_SITE_URL: https://blueangelclinical.com
-          VITE_NOINDEX: "false"
-        run: npm run build
+          VITE_SITE_URL: https://justintella.github.io/New-BACP-Website
+          VITE_NOINDEX: "true"
+        run: npm run build -- --base=/New-BACP-Website/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
