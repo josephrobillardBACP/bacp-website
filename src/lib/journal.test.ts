@@ -17,14 +17,16 @@ describe('Journal publication boundaries', () => {
     expect(calendarStatus(journalCalendar.entries[0], journalArticles, now)).toBe('Awaiting generation');
   });
   it('publishes only the explicitly approved article while automatic publication remains paused', () => {
-    const approved = journalArticles[0];
+    const approved = journalArticles.find((article) => article.slug === 'what-is-concierge-medicine')!;
+    const secondApproved = journalArticles.find((article) => article.slug === 'questions-before-joining-concierge-practice')!;
     const publicationDate = new Date('2026-11-02T20:00:00Z');
     const unapproved = { ...approved, slug: 'unapproved', status: 'published' as const };
     const draft = { ...approved, slug: 'draft', status: 'draft' as const };
     const future = { ...approved, publishedAt: '2027-04-01T16:00:00Z' };
     expect(journalCalendar.websitePublicationEnabled).toBe(false);
     expect(approved.status).toBe('published');
-    expect(journalCalendar.manuallyPublishedSlugs).toEqual([approved.slug]);
+    expect(journalCalendar.manuallyPublishedSlugs).toEqual([approved.slug, secondApproved.slug]);
+    expect(secondApproved.status).toBe('published');
     expect(getPublishedArticles([approved, unapproved, draft], publicationDate).map((article) => article.slug)).toEqual([approved.slug]);
     expect(getPublishedArticles([future], publicationDate)).toEqual([]);
     expect(getPublishedArticles([approved], publicationDate, false, [])).toEqual([]);

@@ -17,13 +17,25 @@ function view(entry = '/blog') {
 }
 describe('Original news story navigation', () => {
   it('opens the approved newsletter from the listing and returns without a source footer', () => {
-    const article = journalArticles[0];
+    const article = journalArticles.find((item) => item.slug === 'what-is-concierge-medicine')!;
     view();
     fireEvent.click(screen.getByRole('link', { name: new RegExp('What Is Concierge Medicine') }));
     expect(screen.getByRole('heading', { level: 1, name: article.title })).toBeVisible();
     const body = screen.getByRole('article');
     article.sections.flatMap((section) => section.paragraphs).forEach((paragraph) => expect(body.textContent).toContain(paragraph));
     expect(body.textContent).not.toContain('This article was prepared with AI assistance');
+    expect(body.querySelector('#sources')).toBeNull();
+    fireEvent.click(screen.getByRole('link', { name: 'Back to Blog' }));
+    expect(screen.getByRole('heading', { name: 'Latest news.' })).toBeVisible();
+  });
+
+  it('opens the November 10 newsletter from the listing and returns without a source footer', () => {
+    const article = journalArticles.find((item) => item.slug === 'questions-before-joining-concierge-practice')!;
+    view();
+    fireEvent.click(screen.getByRole('link', { name: new RegExp('Seven Questions to Ask') }));
+    expect(screen.getByRole('heading', { level: 1, name: article.title })).toBeVisible();
+    const body = screen.getByRole('article');
+    article.sections.flatMap((section) => section.paragraphs).forEach((paragraph) => expect(body.textContent).toContain(paragraph));
     expect(body.querySelector('#sources')).toBeNull();
     fireEvent.click(screen.getByRole('link', { name: 'Back to Blog' }));
     expect(screen.getByRole('heading', { name: 'Latest news.' })).toBeVisible();
