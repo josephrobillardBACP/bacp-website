@@ -39,9 +39,9 @@ jobs:
 
       - name: Build
         env:
-          VITE_SITE_URL: https://justintella.github.io/New-BACP-Website
-          VITE_NOINDEX: "true"
-        run: npm run build -- --base=/New-BACP-Website/
+          VITE_SITE_URL: https://blueangelclinical.com
+          VITE_NOINDEX: "false"
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
